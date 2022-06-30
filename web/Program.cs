@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using web.Data;
+using web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,5 +28,6 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+app.MapHub<MessageHub>("/messagehub");
 
 app.Run();
