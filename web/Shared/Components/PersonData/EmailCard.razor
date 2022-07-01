@@ -1,0 +1,12 @@
+﻿<lable for="email">Email<input id="email" @bind="Email" class="form-control" />
+</lable>
+<ValidationMessage For="() => Email"/>
+
+@code {
+
+	[Parameter]
+	public string Email { get; set; }
+	
+	[Parameter]
+	public EventCallback<string> EmailChanged { get; set; }
+}
