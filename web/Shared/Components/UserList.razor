@@ -1,0 +1,17 @@
+﻿@using web.Model
+<h3>UserList</h3>
+@foreach(var user in Users)
+	{
+		<div class="card mb-3">
+			<div class="card-header">
+				@user.Username
+			</div>
+			<div class="card-body">@user.Firstname @user.Lastname</div>
+		</div>
+	}
+
+@code {
+
+	[Parameter]
+	public List<User> Users { get; set; }
+}

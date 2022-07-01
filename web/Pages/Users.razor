@@ -1,0 +1,19 @@
+﻿@page "/users"
+
+@using web.Model
+@using web.Data
+@inject UserService _userService;
+
+<h3>Users</h3>
+<UserList Users="_users"></UserList>
+
+@code {
+	private List<User> _users;
+
+	protected override void OnInitialized()
+	{
+		_users = _userService.GetUsers();
+		base.OnInitialized();
+	}
+
+}
